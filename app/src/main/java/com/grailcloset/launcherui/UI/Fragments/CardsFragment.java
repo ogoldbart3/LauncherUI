@@ -17,7 +17,7 @@ import com.grailcloset.launcherui.UI.Listeners.SwipeDismissRecyclerViewTouchList
 public class CardsFragment extends Fragment {
 
     RecyclerViewAdapter adapter;
-    RecyclerView recyclerView;
+//    RecyclerView recyclerView;
 
     public CardsFragment() {
     }
@@ -34,24 +34,24 @@ public class CardsFragment extends Fragment {
 
         Datamart.getInstance().setCardListContext(view.getContext());
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.myList);
-        recyclerView.setHasFixedSize(true);
+        Datamart.getInstance().setRecyclerView( (RecyclerView) view.findViewById(R.id.myList) );
+        Datamart.getInstance().getRecyclerView().setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(llm);
+        Datamart.getInstance().getRecyclerView().setLayoutManager(llm);
 
         if ( Datamart.getInstance().getCards().size() == 0 ) {
-            for (byte i = 0; i < 10; i++) {
-                Datamart.getInstance().getCards().add(new SimpleTextCard( "helloooo " + i));
-            }
+//            for (byte i = 0; i < 10; i++) {
+                Datamart.getInstance().getCards().add(new SimpleTextCard( "helloooo" ));
+//            }
         }
 
         adapter = new RecyclerViewAdapter(Datamart.getInstance().getCards());
-        recyclerView.setAdapter(adapter);
+        Datamart.getInstance().getRecyclerView().setAdapter(adapter);
 
         SwipeDismissRecyclerViewTouchListener touchListener =
                 new SwipeDismissRecyclerViewTouchListener(
-                        recyclerView,
+                        Datamart.getInstance().getRecyclerView(),
                         new SwipeDismissRecyclerViewTouchListener.DismissCallbacks() {
                             @Override
                             public boolean canDismiss(int position) {
@@ -65,11 +65,10 @@ public class CardsFragment extends Fragment {
                                 }
                                 // do not call notifyItemRemoved for every item, it will cause gaps on deleting items
                                 adapter.notifyDataSetChanged();
-
                             }
                         });
-        recyclerView.setOnTouchListener(touchListener);
-        recyclerView.setOnScrollListener(touchListener.makeScrollListener());
+        Datamart.getInstance().getRecyclerView().setOnTouchListener(touchListener);
+        Datamart.getInstance().getRecyclerView().setOnScrollListener(touchListener.makeScrollListener());
     }
 }
 

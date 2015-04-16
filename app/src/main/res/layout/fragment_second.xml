@@ -3,9 +3,23 @@
     android:layout_height="match_parent">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/second_fragment_text"
-        android:id="@+id/secondFragmentTextView"/>
+        android:orientation="vertical"
+        tools:context=".LinearLayout" >
+
+        <TextView android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/second_fragment_text"
+            android:id="@+id/secondFragmentTextView"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/second_button_text"
+            android:id="@+id/secondFragmentButton"/>
+    </LinearLayout>
 
 </FrameLayout>

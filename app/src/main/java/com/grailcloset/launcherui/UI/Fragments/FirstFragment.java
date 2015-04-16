@@ -6,14 +6,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.grailcloset.launcherui.Model.Datamart;
 import com.grailcloset.launcherui.R;
+import com.grailcloset.launcherui.UI.Cards.SimpleTextCard;
 
 public class FirstFragment extends Fragment {
 
-
     public TextView firstFragmentTextView;
+    public Button firstFragmentButton;
 
     public FirstFragment() {
     }
@@ -29,6 +32,14 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         firstFragmentTextView = (TextView) view.findViewById(R.id.firstFragmentTextView);
+        firstFragmentButton = (Button) view.findViewById(R.id.firstFragmentButton);
+        firstFragmentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Datamart.getInstance().getCards().add(new SimpleTextCard( "from first fragment" ));
+                Datamart.getInstance().getRecyclerView().getAdapter().notifyDataSetChanged();
+            }
+        });
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.grailcloset.launcherui.Model;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ public class Datamart {
     static Datamart instance;
 
     private Context cardListContext;
+    private RecyclerView recyclerView;
 
     private ArrayList<Card> cards;
 
@@ -44,5 +46,13 @@ public class Datamart {
 
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
+    }
+
+    public RecyclerView getRecyclerView() {
+        return recyclerView;
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView) {
+        this.recyclerView = recyclerView;
     }
 }
