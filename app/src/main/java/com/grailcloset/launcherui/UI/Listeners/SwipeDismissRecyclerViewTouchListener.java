@@ -22,7 +22,6 @@ import android.animation.ValueAnimator;
 import android.graphics.Rect;
 import android.os.SystemClock;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
@@ -261,7 +260,6 @@ public class SwipeDismissRecyclerViewTouchListener implements View.OnTouchListen
                 mVelocityTracker.addMovement(motionEvent);
                 float deltaX = motionEvent.getRawX() - mDownX;
                 if ( deltaX < 0 ) {
-                    Log.d("catcat", "adding lefting");
                     return false;
                 }
 
