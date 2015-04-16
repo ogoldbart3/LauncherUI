@@ -92,7 +92,6 @@ public class MainActivity extends ActionBarActivity {
             switch (position) {
                 case(0):
                     return new CardsFragment();
-//                    break;
                 case(1):
                     return new FirstFragment();
                 case(2):
