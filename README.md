@@ -24,7 +24,8 @@ Add new cards:
 
 To create custom cards, extend Card and use CustomCard or SimpleTextCard as a template:
 
-    //Cards will automatically be generated with shadowing & material design through the adapter & recycler
+    //Cards will automatically be generated with shadowing
+    //through the adapter & recycler
     //All you need to do is add the new UI elements
     public class CustomCard extends Card {
 
