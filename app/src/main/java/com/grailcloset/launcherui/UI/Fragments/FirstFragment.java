@@ -31,7 +31,9 @@ public class FirstFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         firstFragmentTextView = (TextView) view.findViewById(R.id.firstFragmentTextView);
+
         firstFragmentButton = (Button) view.findViewById(R.id.firstFragmentButton);
         firstFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,12 +43,6 @@ public class FirstFragment extends Fragment {
             }
         });
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
 }
 
 

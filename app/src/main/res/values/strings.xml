@@ -2,8 +2,8 @@
     <string name="app_name">LauncherUI</string>
 
     <string name="title_section1">Cards</string>
-    <string name="title_section2">Watchlist</string>
-    <string name="title_section3">Closet</string>
+    <string name="title_section2">First Fragment</string>
+    <string name="title_section3">Second Fragment</string>
 
     <string name="hello_world">Hello world!</string>
 

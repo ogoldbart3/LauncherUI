@@ -32,7 +32,9 @@ public class SecondFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         secondFragmentTextView = (TextView) view.findViewById(R.id.secondFragmentTextView);
+
         secondFragmentButton = (Button) view.findViewById(R.id.secondFragmentButton);
         secondFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +44,6 @@ public class SecondFragment extends Fragment {
             }
         });
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
 }
 
 

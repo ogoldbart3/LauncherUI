@@ -25,9 +25,7 @@ public class Datamart {
 
     public static Datamart getInstance() {
         if (instance == null) {
-            if (instance == null || !(instance instanceof Datamart)) {
-                instance = new Datamart();
-            }
+            instance = new Datamart();
         }
         return instance;
     }

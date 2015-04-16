@@ -16,9 +16,6 @@ import com.grailcloset.launcherui.UI.Listeners.SwipeDismissRecyclerViewTouchList
 
 public class CardsFragment extends Fragment {
 
-    RecyclerViewAdapter adapter;
-//    RecyclerView recyclerView;
-
     public CardsFragment() {
     }
 
@@ -41,13 +38,10 @@ public class CardsFragment extends Fragment {
         Datamart.getInstance().getRecyclerView().setLayoutManager(llm);
 
         if ( Datamart.getInstance().getCards().size() == 0 ) {
-//            for (byte i = 0; i < 10; i++) {
-                Datamart.getInstance().getCards().add(new SimpleTextCard( "helloooo" ));
-//            }
+            Datamart.getInstance().getCards().add(new SimpleTextCard( "Example first card.  Swipe right to remove." ));
         }
 
-        adapter = new RecyclerViewAdapter(Datamart.getInstance().getCards());
-        Datamart.getInstance().getRecyclerView().setAdapter(adapter);
+        Datamart.getInstance().getRecyclerView().setAdapter( new RecyclerViewAdapter(Datamart.getInstance().getCards()) );
 
         SwipeDismissRecyclerViewTouchListener touchListener =
                 new SwipeDismissRecyclerViewTouchListener(
@@ -63,8 +57,7 @@ public class CardsFragment extends Fragment {
                                 for (int position : reverseSortedPositions) {
                                     Datamart.getInstance().getCards().remove(position);
                                 }
-                                // do not call notifyItemRemoved for every item, it will cause gaps on deleting items
-                                adapter.notifyDataSetChanged();
+                                Datamart.getInstance().getRecyclerView().getAdapter().notifyDataSetChanged();
                             }
                         });
         Datamart.getInstance().getRecyclerView().setOnTouchListener(touchListener);
