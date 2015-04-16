@@ -10,29 +10,26 @@ import android.widget.TextView;
 
 import com.grailcloset.launcherui.R;
 
-public class ClosetFragment extends Fragment {
+public class SecondFragment extends Fragment {
 
 
-    public TextView closetFragmentTextViewLoggedIn;
+    public TextView secondFragmentTextView;
 
-    public ClosetFragment() {
+    public SecondFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_closet, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_second, container, false);
 
-//        Datamart.getInstance().setContext( () );
-
-        rootView.setTag("page2");
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        closetFragmentTextViewLoggedIn = (TextView) view.findViewById(R.id.closetFragmentLoggedInText);
+        secondFragmentTextView = (TextView) view.findViewById(R.id.secondFragmentTextView);
     }
 
     @Override

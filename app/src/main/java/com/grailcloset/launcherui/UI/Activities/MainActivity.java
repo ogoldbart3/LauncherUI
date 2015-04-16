@@ -11,8 +11,8 @@ import android.view.MenuItem;
 
 import com.grailcloset.launcherui.R;
 import com.grailcloset.launcherui.UI.Fragments.CardsFragment;
-import com.grailcloset.launcherui.UI.Fragments.ClosetFragment;
-import com.grailcloset.launcherui.UI.Fragments.WatchlistFragment;
+import com.grailcloset.launcherui.UI.Fragments.SecondFragment;
+import com.grailcloset.launcherui.UI.Fragments.FirstFragment;
 
 import java.util.Locale;
 
@@ -94,9 +94,9 @@ public class MainActivity extends ActionBarActivity {
                     return new CardsFragment();
 //                    break;
                 case(1):
-                    return new WatchlistFragment();
+                    return new FirstFragment();
                 case(2):
-                    return new ClosetFragment();
+                    return new SecondFragment();
                 case(3):
                     break;
             }

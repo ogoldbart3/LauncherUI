@@ -10,25 +10,25 @@ import android.widget.TextView;
 
 import com.grailcloset.launcherui.R;
 
-public class WatchlistFragment extends Fragment {
+public class FirstFragment extends Fragment {
 
 
-    public TextView watchlistFragmentTextViewLoggedIn;
+    public TextView firstFragmentTextView;
 
-    public WatchlistFragment() {
+    public FirstFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_watchlist, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_first, container, false);
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        watchlistFragmentTextViewLoggedIn = (TextView) view.findViewById(R.id.watchlistFragmentLoggedInText);
+        firstFragmentTextView = (TextView) view.findViewById(R.id.firstFragmentTextView);
     }
 
     @Override
