@@ -38,7 +38,7 @@ public class FirstFragment extends Fragment {
         firstFragmentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Datamart.getInstance().getCards().add(new SimpleTextCard( "from first fragment" ));
+                Datamart.getInstance().getCards().add(new SimpleTextCard( "from first fragment\nthis will slide", true ));
                 Datamart.getInstance().getRecyclerView().getAdapter().notifyDataSetChanged();
             }
         });

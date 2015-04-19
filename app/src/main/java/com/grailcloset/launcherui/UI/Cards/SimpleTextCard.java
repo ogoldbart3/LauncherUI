@@ -13,22 +13,26 @@ import it.gmariotti.cardslib.library.internal.Card;
 /**
  * Created by Oliver on 4/14/2015.
  */
-public class SimpleTextCard extends Card {
+public class SimpleTextCard extends PowerCard {
 
     protected TextView mTitle;
 
     private String textString;
 
     public SimpleTextCard(String textString) {
-        this(Datamart.getInstance().getCardListContext(), textString);
+        this(Datamart.getInstance().getCardListContext(), textString, true);
     }
 
-    public SimpleTextCard(Context context, String textString) {
-        this(context, R.layout.layout_simple_text_card, textString);
+    public SimpleTextCard(String textString, boolean canSwipe) {
+        this(Datamart.getInstance().getCardListContext(), textString, canSwipe);
     }
 
-    public SimpleTextCard(Context context, int innerLayout, String textString) {
-        super(context, innerLayout);
+    public SimpleTextCard(Context context, String textString, boolean canSwipe) {
+        this(context, R.layout.layout_simple_text_card, textString, canSwipe);
+    }
+
+    public SimpleTextCard(Context context, int innerLayout, String textString, boolean canSwipe) {
+        super(context, innerLayout, canSwipe);
         this.textString = textString;
         init();
     }

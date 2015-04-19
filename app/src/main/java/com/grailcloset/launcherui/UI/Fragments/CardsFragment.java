@@ -49,7 +49,7 @@ public class CardsFragment extends Fragment {
                         new SwipeDismissRecyclerViewTouchListener.DismissCallbacks() {
                             @Override
                             public boolean canDismiss(int position) {
-                                return true;
+                                return Datamart.getInstance().getCards().get(position).getCanSwipe();
                             }
 
                             @Override

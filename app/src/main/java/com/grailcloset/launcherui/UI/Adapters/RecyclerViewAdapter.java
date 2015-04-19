@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.grailcloset.launcherui.R;
+import com.grailcloset.launcherui.UI.Cards.PowerCard;
 
 import java.util.ArrayList;
 
@@ -15,10 +16,10 @@ import it.gmariotti.cardslib.library.view.CardViewNative;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ListItemViewHolder> {
 
-    private ArrayList<Card> items;
+    private ArrayList<PowerCard> items;
     private SparseBooleanArray selectedItems;
 
-    public RecyclerViewAdapter(ArrayList<Card> modelData) {
+    public RecyclerViewAdapter(ArrayList<PowerCard> modelData) {
         if (modelData == null) {
             throw new IllegalArgumentException("modelData must not be null");
         }

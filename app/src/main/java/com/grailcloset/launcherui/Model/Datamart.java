@@ -3,6 +3,8 @@ package com.grailcloset.launcherui.Model;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 
+import com.grailcloset.launcherui.UI.Cards.PowerCard;
+
 import java.util.ArrayList;
 
 import it.gmariotti.cardslib.library.internal.Card;
@@ -17,7 +19,7 @@ public class Datamart {
     private Context cardListContext;
     private RecyclerView recyclerView;
 
-    private ArrayList<Card> cards;
+    private ArrayList<PowerCard> cards;
 
     public Datamart() {
         cards = new ArrayList<>();
@@ -38,11 +40,11 @@ public class Datamart {
         this.cardListContext = cardListContext;
     }
 
-    public ArrayList<Card> getCards() {
+    public ArrayList<PowerCard> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Card> cards) {
+    public void setCards(ArrayList<PowerCard> cards) {
         this.cards = cards;
     }
 
